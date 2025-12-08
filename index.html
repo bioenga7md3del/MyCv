@@ -3,82 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Mohamed Adel - Biomedical Engineer</title>
+    <title>Ahmed Mohamed Adel - Project Manager & Biomedical Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #0056b3; /* Medical Blue */
-            --secondary-color: #f4f4f4;
+            --secondary-color: #f8f9fa;
             --text-color: #333;
             --accent-color: #e74c3c;
+            --dark-bg: #2c3e50;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             color: var(--text-color);
+            background-color: #f0f2f5;
         }
+        /* Header Design */
         header {
-            background: #2c3e50;
+            background: var(--dark-bg);
             color: #fff;
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
+            position: relative;
         }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { font-size: 1.2rem; opacity: 0.9; }
-        .contact-info { margin-top: 10px; font-size: 0.9rem; }
+        header h1 { margin: 0; font-size: 2.8rem; font-weight: 700; }
+        header p { font-size: 1.3rem; opacity: 0.9; margin-top: 10px; }
+        .contact-info { margin-top: 15px; font-size: 1rem; }
+        .contact-info a { color: #fff; text-decoration: none; margin: 0 10px; transition: 0.3s; }
+        .contact-info a:hover { color: var(--accent-color); }
+        
+        /* Action Buttons */
+        .header-buttons { margin-top: 20px; }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-download { background: var(--accent-color); color: white; }
+        .btn-linkedin { background: #0077b5; color: white; }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
         .container {
-            width: 80%;
+            width: 85%;
+            max-width: 1100px;
             margin: auto;
             overflow: hidden;
             padding: 20px;
         }
         section {
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
             background: #fff;
-            border-bottom: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         h2 {
             color: var(--primary-color);
             text-transform: uppercase;
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
             display: inline-block;
             padding-bottom: 5px;
+            margin-top: 0;
         }
-        .job, .project { margin-bottom: 20px; }
-        .job h3, .project h3 { margin-bottom: 5px; color: #444; }
-        .job-meta { color: #666; font-style: italic; margin-bottom: 10px; display: block; }
+        
+        /* Job & Project Styles */
+        .job, .project { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .job:last-child { border-bottom: none; }
+        .job h3, .project h3 { margin-bottom: 5px; color: #2c3e50; font-size: 1.3rem; }
+        .job-meta { color: #666; font-style: italic; margin-bottom: 12px; display: block; }
+        .job-meta a { color: var(--primary-color); text-decoration: none; font-weight: bold; }
+        .job-meta a:hover { text-decoration: underline; }
+        
         ul { margin: 0; padding-left: 20px; }
+        li { margin-bottom: 5px; }
+
+        /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
         }
         .skill-item {
             background: var(--secondary-color);
-            padding: 10px;
-            border-radius: 5px;
-            font-weight: bold;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
             text-align: center;
+            border: 1px solid #e1e4e8;
+            transition: 0.3s;
         }
+        .skill-item:hover { background: var(--primary-color); color: white; border-color: var(--primary-color); }
+        
         .badge {
             background: var(--accent-color);
             color: white;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.8em;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
             vertical-align: middle;
-            margin-left: 5px;
+            margin-left: 8px;
         }
+
+        /* Certificates Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .cert-card {
+            background: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        /* Placeholder for images */
+        .cert-placeholder {
+            width: 100%;
+            height: 150px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+        }
+        .cert-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
         footer {
-            background: #333;
+            background: var(--dark-bg);
             color: #fff;
             text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+            padding: 20px;
+            margin-top: 40px;
         }
+        
         @media (max-width: 768px) {
             .container { width: 95%; }
+            header h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -88,120 +163,151 @@
     <div class="container">
         <h1>Ahmed Mohamed Adel</h1>
         <p>Project Manager | Biomedical & Clinical Engineer</p>
+        
         <div class="contact-info">
-            bioenga7md3del@gmail.com | +20-0101-771-7488
+            <a href="mailto:bioenga7md3del@gmail.com"><i class="fas fa-envelope"></i> bioenga7md3del@gmail.com</a>
+            <a href="tel:+2001017717488"><i class="fas fa-phone"></i> +20-0101-771-7488</a>
+        </div>
+
+        <div class="header-buttons">
+            <a href="Ahmed_Adel_CV.pdf" class="btn btn-download" download><i class="fas fa-file-pdf"></i> Download CV</a>
+            <a href="https://www.linkedin.com/" target="_blank" class="btn btn-linkedin"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
         </div>
     </div>
 </header>
 
 <div class="container">
     <section id="profile">
-        <h2>Profile</h2>
+        <h2><i class="fas fa-user-tie"></i> Executive Profile</h2>
         <p>
-            Dynamic Project Manager and Biomedical Engineer with extensive experience in managing technical teams and medical maintenance operations. 
-            <strong>Specialized in developing software solutions</strong> to enhance maintenance efficiency and implementing <strong>AI-based predictive maintenance</strong> models. 
-            Deep knowledge of <strong>JCI and CBAHI accreditation standards</strong>. Currently pursuing PMP certification to further solidify managerial expertise.
+            Dynamic <strong>Project Manager</strong> and Biomedical Engineer with extensive experience in managing technical teams and medical maintenance operations. 
+            Proven track record in <strong>enhancing operational efficiency</strong> and implementing <strong>AI-based predictive maintenance</strong> models. 
+            Deep knowledge of <strong>JCI and CBAHI accreditation standards</strong>. Currently pursuing <strong>PMP certification</strong> to further solidify managerial expertise.
         </p>
     </section>
 
     <section id="experience">
-        <h2>Work Experience</h2>
+        <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
 
         <div class="job">
             <h3>Project Manager</h3>
-            <span class="job-meta">First Gulf Company (FGC) - Tabuk Health Cluster | Oct 2022 - Present</span>
+            <span class="job-meta">
+                <a href="https://fgc.sa/" target="_blank">First Gulf Company (FGC)</a> - Tabuk Health Cluster | Oct 2022 - Present
+            </span>
             <ul>
-                <li><strong>Location:</strong> General Administration of Medical Maintenance, Tabuk.</li>
-                <li>Managing a team of <strong>3 Engineers and 14 Technicians</strong> to ensure optimal operation of medical assets.</li>
-                <li>Implementing strategies to raise maintenance efficiency and reduce downtime.</li>
-                <li>Overseeing compliance with medical equipment safety standards.</li>
+                <li><strong>Leadership:</strong> Managing a technical team of <strong>3 Engineers and 14 Technicians</strong> at the General Administration of Medical Maintenance.</li>
+                <li><strong>Operations:</strong> Overseeing medical asset maintenance, ensuring workflow efficiency and minimizing downtime.</li>
+                <li><strong>Strategy:</strong> Implementing strategies to raise maintenance standards and ensure compliance with health cluster KPIs.</li>
             </ul>
         </div>
 
         <div class="job">
             <h3>Mobile Teams Project Manager</h3>
-            <span class="job-meta">SRACO Company - Tabuk Region | Aug 2018 - Sept 2022</span>
+            <span class="job-meta">
+                <a href="https://sraco.com.sa/" target="_blank">SRACO Company</a> - Tabuk Region | Aug 2018 - Sept 2022
+            </span>
             <ul>
-                <li>Managed mobile maintenance teams across the Tabuk region ensuring rapid response times.</li>
-                <li>Supervised routine and urgent maintenance tasks for diverse medical equipment.</li>
-                <li>Coordinated with health facilities to maintain high service levels.</li>
+                <li>Managed mobile maintenance teams across the entire Tabuk region.</li>
+                <li>Supervised routine and urgent maintenance tasks ensuring rapid response times.</li>
+                <li>Coordinated directly with health facilities to guarantee optimal equipment availability.</li>
             </ul>
         </div>
 
         <div class="job">
             <h3>Senior Biomedical & Clinical Engineer</h3>
-            <span class="job-meta">As-salam Hospital (JCI Accredited) | Sept 2017 - July 2018</span>
+            <span class="job-meta">
+                <a href="https://www.assih.com/" target="_blank">As-salam Hospital (JCI Accredited)</a> | Sept 2017 - July 2018
+            </span>
             <ul>
-                <li>Led engineering teams and managed daily maintenance operations.</li>
-                <li>Ensured compliance with JCI standards and safety regulations.</li>
-                <li>Evaluated new equipment and managed spare parts inventory.</li>
+                <li>Led engineering teams, replacing the Supervisor Engineer during absence.</li>
+                <li>Resolved complex technical complaints and directed corrective actions.</li>
+                <li>Evaluated new equipment purchases and managed spare parts inventory.</li>
             </ul>
         </div>
 
         <div class="job">
             <h3>Biomedical & Clinical Engineer</h3>
-            <span class="job-meta">Elaraby Hospital (JCI Accredited) | March 2016 - Sept 2017</span>
+            <span class="job-meta">
+                <a href="https://www.elarabyhospital.com/" target="_blank">Elaraby Hospital (JCI Accredited)</a> | March 2016 - Sept 2017
+            </span>
             <ul>
-                <li>Provided comprehensive technical support and documented maintenance activities.</li>
-                <li>Participated in acquisition planning and user training.</li>
+                <li>Provided comprehensive technical support and documentation for JCI compliance.</li>
+                <li>Developed preventive maintenance schedules and trained technical staff.</li>
+                <li>Participated in acquisition planning, renovation projects, and equipment upgrades.</li>
             </ul>
         </div>
 
         <div class="job">
             <h3>Maintenance Engineer</h3>
-            <span class="job-meta">Al Waha Medical Service Company | Sept 2013 - March 2016</span>
+            <span class="job-meta">
+                <a href="https://wahamed.com/" target="_blank">Al Waha Medical Service Company</a> | Sept 2013 - March 2016
+            </span>
             <ul>
-                <li>Performed installation, calibration, and repair of medical instrumentation.</li>
+                <li>Carried out installation, calibration, and repair of medical instrumentation.</li>
+                <li>Performed on-site troubleshooting and customer training.</li>
             </ul>
         </div>
     </section>
     
     <section id="projects">
-        <h2>Key Projects & Innovations</h2>
+        <h2><i class="fas fa-lightbulb"></i> Key Projects & Innovations</h2>
         
         <div class="project">
-            <h3>AI-Driven Predictive Maintenance Project <span class="badge">Current</span></h3>
-            <p>Developing a system utilizing <strong>Artificial Intelligence</strong> to predict medical equipment faults before they occur. This initiative aims to drastically reduce downtime, optimize spare parts management, and increase overall asset reliability.</p>
+            <h3>AI-Driven Predictive Maintenance System <span class="badge">Current</span></h3>
+            <p>Leading an initiative to utilize <strong>Artificial Intelligence</strong> for predicting medical equipment faults. The goal is to shift from reactive to predictive maintenance, reducing unexpected downtime and optimizing asset lifespan.</p>
         </div>
 
         <div class="project">
-            <h3>Hospital Devices Information System</h3>
-            <p>Designed and developed a custom <strong>Desktop Application (C#, SQL Server)</strong> to manage medical equipment inventory, track maintenance history, technical validation, and manage spare parts stock. This system improved data accuracy and operational efficiency.</p>
+            <h3>Hospital Devices Information System (HDIS)</h3>
+            <p>Designed and developed a custom <strong>Desktop Application (C#, SQL Server)</strong> to digitize the inventory management process. Features included maintenance tracking, technical validation reports, and spare parts stock management.</p>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Skills & Expertise</h2>
+        <h2><i class="fas fa-tools"></i> Skills & Expertise</h2>
         <div class="skills-grid">
-            <div class="skill-item">Project Management (PMP Study)</div>
-            <div class="skill-item">Accreditation (JCI & CBAHI)</div>
-            <div class="skill-item">Predictive Maintenance (AI)</div>
-            <div class="skill-item">Software Dev (C#, SQL)</div>
+            <div class="skill-item">Project Management (PMP)</div>
             <div class="skill-item">Team Leadership</div>
-            <div class="skill-item">Process Efficiency Improvement</div>
+            <div class="skill-item">Accreditation (JCI & CBAHI)</div>
+            <div class="skill-item">AI in Healthcare</div>
+            <div class="skill-item">Software Dev (C#, SQL)</div>
+            <div class="skill-item">Predictive Maintenance</div>
             <div class="skill-item">Medical Asset Management</div>
             <div class="skill-item">Budgeting & Planning</div>
         </div>
     </section>
 
-    <section id="education">
-        <h2>Education & Certifications</h2>
-        <div class="job">
-            <h3>PMP - Project Management Professional</h3>
-            <span class="job-meta">Project Management Institute (PMI) | <span style="color:var(--accent-color)">In Progress (Preparation)</span></span>
+    <section id="certificates">
+        <h2><i class="fas fa-certificate"></i> Certifications Gallery</h2>
+        <p style="font-size:0.9rem; color:#666; margin-bottom:15px;">Selected technical and managerial certifications.</p>
+        
+        <div class="gallery-grid">
+            <div class="cert-card">
+                <div class="cert-placeholder">Put 'cert1.jpg' in images folder</div>
+                <p><strong>GE Healthcare</strong><br>Ventilator Maintenance</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-placeholder">Put 'cert2.jpg' in images folder</div>
+                <p><strong>Siemens Egypt</strong><br>Lab Devices Training</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-placeholder">Put 'cert3.jpg' in images folder</div>
+                <p><strong>Alshark / Bellco</strong><br>Hemodialysis Machines</p>
+            </div>
+             <div class="cert-card">
+                <div class="cert-placeholder">Put 'cert4.jpg' in images folder</div>
+                <p><strong>IBG Company</strong><br>Clinical Engineering</p>
+            </div>
         </div>
+    </section>
+
+    <section id="education">
+        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
         <div class="job">
             <h3>B.Sc. in Systems & Biomedical Engineering</h3>
             <span class="job-meta">Cairo University | 2013</span>
-            <p>Graduation Project: Robot Arm (Grade: Excellent)</p>
+            <p><strong>Graduation Project:</strong> Robot Arm (Grade: Excellent)</p>
         </div>
-        
-        <h3>Technical Training</h3>
-        <ul>
-            <li><strong>GE Healthcare:</strong> Ventilator Maintenance (Carescape R860), Anesthesia Machines.</li>
-            <li><strong>Siemens Egypt:</strong> Lab devices (PEB III, SYSMEX CA6000, ADVIA).</li>
-            <li><strong>IBG & Alshark:</strong> Clinical Engineering Principles, Hemodialysis Machines.</li>
-        </ul>
     </section>
 </div>
 

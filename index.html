@@ -178,7 +178,28 @@
         </div>
     </div>
 </header>
+<style>
+    /* أضف هذا الستايل في قسم <style> في ملف index.html إذا لم يكن موجوداً */
+    .lang-switch {
+        position: absolute;
+        top: 20px;
+        right: 20px; /* الإنجليزية: الزر يمين */
+        background: rgba(255,255,255,0.2);
+        padding: 5px 15px;
+        border-radius: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+        border: 1px solid rgba(255,255,255,0.5);
+    }
+    .lang-switch:hover { background: #fff; color: var(--dark-bg); }
+    @media (max-width: 768px) {
+        .lang-switch { top: 10px; right: 10px; padding: 3px 10px; font-size: 0.9rem; }
+    }
+</style>
 
+<a href="ar.html" class="lang-switch">العربية <i class="fas fa-globe"></i></a>
 <div class="container">
     <section id="profile">
         <h2><i class="fas fa-user-tie"></i> Executive Profile</h2>

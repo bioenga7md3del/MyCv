@@ -9,6 +9,7 @@
             --primary-color: #0056b3; /* Medical Blue */
             --secondary-color: #f4f4f4;
             --text-color: #333;
+            --accent-color: #e74c3c;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -44,8 +45,8 @@
             display: inline-block;
             padding-bottom: 5px;
         }
-        .job { margin-bottom: 20px; }
-        .job h3 { margin-bottom: 5px; color: #444; }
+        .job, .project { margin-bottom: 20px; }
+        .job h3, .project h3 { margin-bottom: 5px; color: #444; }
         .job-meta { color: #666; font-style: italic; margin-bottom: 10px; display: block; }
         ul { margin: 0; padding-left: 20px; }
         .skills-grid {
@@ -58,6 +59,16 @@
             padding: 10px;
             border-radius: 5px;
             font-weight: bold;
+            text-align: center;
+        }
+        .badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            vertical-align: middle;
+            margin-left: 5px;
         }
         footer {
             background: #333;
@@ -78,7 +89,7 @@
         <h1>Ahmed Mohamed Adel</h1>
         <p>Project Manager | Biomedical & Clinical Engineer</p>
         <div class="contact-info">
-            bioenga7md3del@gmail.com | +966541402797
+            bioenga7md3del@gmail.com | +20-0101-771-7488
         </div>
     </div>
 </header>
@@ -87,9 +98,9 @@
     <section id="profile">
         <h2>Profile</h2>
         <p>
-            Highly competent and passionate Biomedical Engineer with extensive experience in clinical engineering and project management. 
-            Proven track record in managing technical teams and maintenance operations across major health clusters. 
-            Graduated from Cairo University with exceptional technical skills, seeking to utilize my experience in a challenging managerial position.
+            Dynamic Project Manager and Biomedical Engineer with extensive experience in managing technical teams and medical maintenance operations. 
+            <strong>Specialized in developing software solutions</strong> to enhance maintenance efficiency and implementing <strong>AI-based predictive maintenance</strong> models. 
+            Deep knowledge of <strong>JCI and CBAHI accreditation standards</strong>. Currently pursuing PMP certification to further solidify managerial expertise.
         </p>
     </section>
 
@@ -101,8 +112,9 @@
             <span class="job-meta">First Gulf Company (FGC) - Tabuk Health Cluster | Oct 2022 - Present</span>
             <ul>
                 <li><strong>Location:</strong> General Administration of Medical Maintenance, Tabuk.</li>
-                <li>Managing a technical team consisting of <strong>3 Engineers and 14 Technicians</strong>.</li>
-                <li>Overseeing medical maintenance operations and ensuring workflow efficiency at the site.</li>
+                <li>Managing a team of <strong>3 Engineers and 14 Technicians</strong> to ensure optimal operation of medical assets.</li>
+                <li>Implementing strategies to raise maintenance efficiency and reduce downtime.</li>
+                <li>Overseeing compliance with medical equipment safety standards.</li>
             </ul>
         </div>
 
@@ -110,9 +122,9 @@
             <h3>Mobile Teams Project Manager</h3>
             <span class="job-meta">SRACO Company - Tabuk Region | Aug 2018 - Sept 2022</span>
             <ul>
-                <li>Managed mobile maintenance teams across the Tabuk region.</li>
-                <li>Supervised routine and urgent maintenance tasks for medical equipment.</li>
-                <li>Coordinated with health facilities to ensure optimal equipment uptime.</li>
+                <li>Managed mobile maintenance teams across the Tabuk region ensuring rapid response times.</li>
+                <li>Supervised routine and urgent maintenance tasks for diverse medical equipment.</li>
+                <li>Coordinated with health facilities to maintain high service levels.</li>
             </ul>
         </div>
 
@@ -120,10 +132,9 @@
             <h3>Senior Biomedical & Clinical Engineer</h3>
             <span class="job-meta">As-salam Hospital (JCI Accredited) | Sept 2017 - July 2018</span>
             <ul>
-                <li>Replaced Supervisor Engineer in duties and distributed repairing tasks.</li>
-                <li>Provided orientation for new employees and organized attendance reports.</li>
-                <li>Resolved complaints and directed performance problems with corrective actions.</li>
-                <li>Ensured equipment operation by evaluating new equipment.</li>
+                <li>Led engineering teams and managed daily maintenance operations.</li>
+                <li>Ensured compliance with JCI standards and safety regulations.</li>
+                <li>Evaluated new equipment and managed spare parts inventory.</li>
             </ul>
         </div>
 
@@ -131,9 +142,8 @@
             <h3>Biomedical & Clinical Engineer</h3>
             <span class="job-meta">Elaraby Hospital (JCI Accredited) | March 2016 - Sept 2017</span>
             <ul>
-                <li>Provided technical support including scheduled/unscheduled maintenance and spare parts inventory.</li>
-                <li>Documented actions/test results and performed in-service education for users.</li>
-                <li>Coordinated special projects, acquisition planning, and acceptance testing.</li>
+                <li>Provided comprehensive technical support and documented maintenance activities.</li>
+                <li>Participated in acquisition planning and user training.</li>
             </ul>
         </div>
 
@@ -141,40 +151,56 @@
             <h3>Maintenance Engineer</h3>
             <span class="job-meta">Al Waha Medical Service Company | Sept 2013 - March 2016</span>
             <ul>
-                <li>Carried out routine maintenance, resolved urgent problems, and installed products.</li>
-                <li>Trained customers on device usage and performed on-site troubleshooting.</li>
+                <li>Performed installation, calibration, and repair of medical instrumentation.</li>
             </ul>
         </div>
     </section>
+    
+    <section id="projects">
+        <h2>Key Projects & Innovations</h2>
+        
+        <div class="project">
+            <h3>AI-Driven Predictive Maintenance Project <span class="badge">Current</span></h3>
+            <p>Developing a system utilizing <strong>Artificial Intelligence</strong> to predict medical equipment faults before they occur. This initiative aims to drastically reduce downtime, optimize spare parts management, and increase overall asset reliability.</p>
+        </div>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div class="job">
-            <h3>B.Sc. in Systems & Biomedical Engineering</h3>
-            <span class="job-meta">Cairo University, Faculty of Engineering | 2008 - 2013</span>
-            <p><strong>Grade:</strong> Good | <strong>Graduation Project:</strong> Robot Arm (Grade: Excellent)</p>
+        <div class="project">
+            <h3>Hospital Devices Information System</h3>
+            <p>Designed and developed a custom <strong>Desktop Application (C#, SQL Server)</strong> to manage medical equipment inventory, track maintenance history, technical validation, and manage spare parts stock. This system improved data accuracy and operational efficiency.</p>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Technical & Managerial Skills</h2>
+        <h2>Skills & Expertise</h2>
         <div class="skills-grid">
-            <div class="skill-item">Project Management</div>
+            <div class="skill-item">Project Management (PMP Study)</div>
+            <div class="skill-item">Accreditation (JCI & CBAHI)</div>
+            <div class="skill-item">Predictive Maintenance (AI)</div>
+            <div class="skill-item">Software Dev (C#, SQL)</div>
             <div class="skill-item">Team Leadership</div>
-            <div class="skill-item">Medical Equipment Maintenance</div>
-            <div class="skill-item">Digital & Analog Electronics</div>
-            <div class="skill-item">Preventive Maintenance Planning</div>
-            <div class="skill-item">Database: SQL Server, MySQL</div>
+            <div class="skill-item">Process Efficiency Improvement</div>
+            <div class="skill-item">Medical Asset Management</div>
+            <div class="skill-item">Budgeting & Planning</div>
         </div>
     </section>
 
-    <section id="training">
-        <h2>Training & Certifications</h2>
+    <section id="education">
+        <h2>Education & Certifications</h2>
+        <div class="job">
+            <h3>PMP - Project Management Professional</h3>
+            <span class="job-meta">Project Management Institute (PMI) | <span style="color:var(--accent-color)">In Progress (Preparation)</span></span>
+        </div>
+        <div class="job">
+            <h3>B.Sc. in Systems & Biomedical Engineering</h3>
+            <span class="job-meta">Cairo University | 2013</span>
+            <p>Graduation Project: Robot Arm (Grade: Excellent)</p>
+        </div>
+        
+        <h3>Technical Training</h3>
         <ul>
             <li><strong>GE Healthcare:</strong> Ventilator Maintenance (Carescape R860), Anesthesia Machines.</li>
             <li><strong>Siemens Egypt:</strong> Lab devices (PEB III, SYSMEX CA6000, ADVIA).</li>
-            <li><strong>IBG Company:</strong> Clinical Engineering Principles & Medical Equipment Management.</li>
-            <li><strong>Alshark Company:</strong> Hemodialysis Machine (BELLCO).</li>
+            <li><strong>IBG & Alshark:</strong> Clinical Engineering Principles, Hemodialysis Machines.</li>
         </ul>
     </section>
 </div>

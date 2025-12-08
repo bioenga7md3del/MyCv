@@ -110,37 +110,39 @@
             margin-left: 8px;
         }
 
-        /* Certificates Gallery */
+        /* Certificates Gallery Styles */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive Grid */
+            gap: 20px;
             margin-top: 15px;
         }
         .cert-card {
-            background: #f9f9f9;
+            background: #fff;
             padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
         }
-        /* Placeholder for images */
-        .cert-placeholder {
-            width: 100%;
-            height: 150px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            border-radius: 4px;
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .cert-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
+            width: 100%;
+            height: 200px; /* Fixed height for uniformity */
+            object-fit: contain; /* Shows full image without cropping */
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+        .cert-caption {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: bold;
         }
 
         footer {
@@ -154,6 +156,7 @@
         @media (max-width: 768px) {
             .container { width: 95%; }
             header h1 { font-size: 2rem; }
+            .cert-card img { height: auto; } /* Auto height on mobile */
         }
     </style>
 </head>
@@ -166,7 +169,7 @@
         
         <div class="contact-info">
             <a href="mailto:bioenga7md3del@gmail.com"><i class="fas fa-envelope"></i> bioenga7md3del@gmail.com</a>
-            <a href="tel:+2001017717488"><i class="fas fa-phone"></i> +20-0101-771-7488</a>
+            <a href=""><i class="fas fa-phone"></i> +0966514102797</a>
         </div>
 
         <div class="header-buttons">
@@ -278,25 +281,87 @@
     </section>
 
     <section id="certificates">
-        <h2><i class="fas fa-certificate"></i> Certifications Gallery</h2>
-        <p style="font-size:0.9rem; color:#666; margin-bottom:15px;">Selected technical and managerial certifications.</p>
+        <h2><i class="fas fa-certificate"></i> Certifications & Documents</h2>
+        <p style="font-size:0.9rem; color:#666; margin-bottom:15px;">A collection of my professional certificates and training documents.</p>
         
         <div class="gallery-grid">
             <div class="cert-card">
-                <div class="cert-placeholder">Put 'cert1.jpg' in images folder</div>
-                <p><strong>GE Healthcare</strong><br>Ventilator Maintenance</p>
+                <a href="images/1.jpg" target="_blank">
+                    <img src="images/1.jpg" alt="Document 1" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 1</div>
             </div>
             <div class="cert-card">
-                <div class="cert-placeholder">Put 'cert2.jpg' in images folder</div>
-                <p><strong>Siemens Egypt</strong><br>Lab Devices Training</p>
+                <a href="images/2.jpg" target="_blank">
+                    <img src="images/2.jpg" alt="Document 2" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 2</div>
             </div>
             <div class="cert-card">
-                <div class="cert-placeholder">Put 'cert3.jpg' in images folder</div>
-                <p><strong>Alshark / Bellco</strong><br>Hemodialysis Machines</p>
+                <a href="images/3.jpg" target="_blank">
+                    <img src="images/3.jpg" alt="Document 3" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 3</div>
             </div>
-             <div class="cert-card">
-                <div class="cert-placeholder">Put 'cert4.jpg' in images folder</div>
-                <p><strong>IBG Company</strong><br>Clinical Engineering</p>
+            <div class="cert-card">
+                <a href="images/4.jpg" target="_blank">
+                    <img src="images/4.jpg" alt="Document 4" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 4</div>
+            </div>
+            <div class="cert-card">
+                <a href="images/5.jpg" target="_blank">
+                    <img src="images/5.jpg" alt="Document 5" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 5</div>
+            </div>
+            <div class="cert-card">
+                <a href="images/6.jpg" target="_blank">
+                    <img src="images/6.jpg" alt="Document 6" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 6</div>
+            </div>
+            <div class="cert-card">
+                <a href="images/7.jpg" target="_blank">
+                    <img src="images/7.jpg" alt="Document 7" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 7</div>
+            </div>
+            <div class="cert-card">
+                <a href="images/8.jpg" target="_blank">
+                    <img src="images/8.jpg" alt="Document 8" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 8</div>
+            </div>
+            <div class="cert-card">
+                <a href="images/9.jpg" target="_blank">
+                    <img src="images/9.jpg" alt="Document 9" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 9</div>
+            </div>
+            <div class="cert-card">
+                <a href="images/10.jpg" target="_blank">
+                    <img src="images/10.jpg" alt="Document 10" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 10</div>
+            </div>
+            <div class="cert-card">
+                <a href="images/11.jpg" target="_blank">
+                    <img src="images/11.jpg" alt="Document 11" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 11</div>
+            </div>
+            <div class="cert-card">
+                <a href="images/12.jpg" target="_blank">
+                    <img src="images/12.jpg" alt="Document 12" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 12</div>
+            </div>
+            <div class="cert-card">
+                <a href="images/13.jpg" target="_blank">
+                    <img src="images/13.jpg" alt="Document 13" loading="lazy">
+                </a>
+                <div class="cert-caption">Certificate / Document 13</div>
             </div>
         </div>
     </section>

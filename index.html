@@ -1,435 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Mohamed Adel - Project Manager & Biomedical Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>PPM Card</title>
     <style>
-        :root {
-            --primary-color: #0056b3; /* Medical Blue */
-            --secondary-color: #f8f9fa;
-            --text-color: #333;
-            --accent-color: #e74c3c;
-            --dark-bg: #2c3e50;
-        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            color: var(--text-color);
-            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
         }
-        /* Header Design */
-        header {
-            background: var(--dark-bg);
-            color: #fff;
-            padding: 3rem 0;
-            text-align: center;
+        /* المقاس الاستاندرد لكروت الأجهزة 9cm x 5.5cm */
+        .card-container {
+            width: 90mm;
+            height: 55mm;
+            background-color: #ffffff;
+            border: 2px solid #1a5276; /* لون أزرق مقارب لتجمع تبوك */
+            border-radius: 8px;
+            padding: 5mm;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
             position: relative;
         }
-        header h1 { margin: 0; font-size: 2.8rem; font-weight: 700; }
-        header p { font-size: 1.3rem; opacity: 0.9; margin-top: 10px; }
-        .contact-info { margin-top: 15px; font-size: 1rem; }
-        .contact-info a { color: #fff; text-decoration: none; margin: 0 10px; transition: 0.3s; }
-        .contact-info a:hover { color: var(--accent-color); }
-        
-        /* Action Buttons */
-        .header-buttons { margin-top: 20px; }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 5px;
-            text-decoration: none;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #a6192e; /* لون أحمر مقارب لـ FGC */
+            padding-bottom: 4px;
+            margin-bottom: 6px;
+        }
+        .logo-box {
+            height: 18px;
+            width: auto;
+            max-width: 35%;
+        }
+        .logo-box img {
+            height: 100%;
+            object-fit: contain;
+        }
+        .title {
+            text-align: center;
             font-weight: bold;
-            transition: 0.3s;
+            font-size: 11px;
+            color: #333;
+            line-height: 1.2;
         }
-        .btn-download { background: var(--accent-color); color: white; }
-        .btn-linkedin { background: #0077b5; color: white; }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
-
-        .container {
-            width: 85%;
-            max-width: 1100px;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 4px;
         }
-        section {
-            padding: 30px;
-            margin-bottom: 25px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: var(--primary-color);
-            text-transform: uppercase;
-            border-bottom: 3px solid var(--primary-color);
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-top: 0;
-        }
-        
-        /* Job & Project Styles */
-        .job, .project { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
-        .job:last-child { border-bottom: none; }
-        .job h3, .project h3 { margin-bottom: 5px; color: #2c3e50; font-size: 1.3rem; }
-        .job-meta { color: #666; font-style: italic; margin-bottom: 12px; display: block; }
-        .job-meta a { color: var(--primary-color); text-decoration: none; font-weight: bold; }
-        .job-meta a:hover { text-decoration: underline; }
-        
-        ul { margin: 0; padding-left: 20px; }
-        li { margin-bottom: 5px; }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-        }
-        .skill-item {
-            background: var(--secondary-color);
-            padding: 12px;
-            border-radius: 6px;
-            font-weight: 600;
-            text-align: center;
-            border: 1px solid #e1e4e8;
-            transition: 0.3s;
-        }
-        .skill-item:hover { background: var(--primary-color); color: white; border-color: var(--primary-color); }
-        
-        .badge {
-            background: var(--accent-color);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.75em;
-            vertical-align: middle;
-            margin-left: 8px;
-        }
-
-        /* Certificates Gallery Styles */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive Grid */
-            gap: 20px;
-            margin-top: 15px;
-        }
-        .cert-card {
-            background: #fff;
-            padding: 10px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-        .cert-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .cert-card img {
-            width: 100%;
-            height: 200px; /* Fixed height for uniformity */
-            object-fit: contain; /* Shows full image without cropping */
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            cursor: pointer;
-        }
-        .cert-caption {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #555;
+        .row {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
             font-weight: bold;
+            color: #000;
         }
-
-        footer {
-            background: var(--dark-bg);
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+        .row span.label {
+            width: 85px; /* لتثبيت بداية النقط */
         }
-        
-        @media (max-width: 768px) {
-            .container { width: 95%; }
-            header h1 { font-size: 2rem; }
-            .cert-card img { height: auto; } /* Auto height on mobile */
+        .row span.dots {
+            flex-grow: 1;
+            border-bottom: 1.5px dotted #666;
+            margin-left: 5px;
+            height: 14px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1>Ahmed Mohamed Adel</h1>
-        <p>Project Manager | Biomedical & Clinical Engineer</p>
-        
-        <div class="contact-info">
-            <a href="mailto:bioenga7md3del@gmail.com"><i class="fas fa-envelope"></i> bioenga7md3del@gmail.com</a>
-            <a href="tel:+966514102797"><i class="fas fa-phone"></i> +966541402797</a>
+    <div class="card-container">
+        <div class="header">
+            <div class="logo-box">
+                <img src="FGC.jpeg" alt="FGC Logo">
+            </div>
+            <div class="title">
+                PREVENTIVE MAINTENANCE<br>
+                صيانة وقائية
+            </div>
+            <div class="logo-box">
+                <img src="TabukCluster (1).jpeg" alt="Tabuk Cluster Logo">
+            </div>
         </div>
 
-        <div class="header-buttons">
-            <a href="Ahmed_Adel_CV.pdf" class="btn btn-download" download><i class="fas fa-file-pdf"></i> Download CV</a>
-            <a href="www.linkedin.com/in/ahmad-adel-b24404bb" target="_blank" class="btn btn-linkedin"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+        <div class="content">
+            <div class="row">
+                <span class="label">Control Num:</span>
+                <span class="dots"></span>
+            </div>
+            <div class="row">
+                <span class="label">PPM Date:</span>
+                <span class="dots"></span>
+            </div>
+            <div class="row">
+                <span class="label">Next PPM:</span>
+                <span class="dots"></span>
+            </div>
+            <div class="row">
+                <span class="label">By:</span>
+                <span class="dots"></span>
+            </div>
         </div>
     </div>
-</header>
-<style>
-    /* أضف هذا الستايل في قسم <style> في ملف index.html إذا لم يكن موجوداً */
-    .lang-switch {
-        position: absolute;
-        top: 20px;
-        right: 20px; /* الإنجليزية: الزر يمين */
-        background: rgba(255,255,255,0.2);
-        padding: 5px 15px;
-        border-radius: 20px;
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
-        border: 1px solid rgba(255,255,255,0.5);
-    }
-    .lang-switch:hover { background: #fff; color: var(--dark-bg); }
-    @media (max-width: 768px) {
-        .lang-switch { top: 10px; right: 10px; padding: 3px 10px; font-size: 0.9rem; }
-    }
-</style>
-
-<a href="ar.html" class="lang-switch">العربية <i class="fas fa-globe"></i></a>
-<div class="container">
-    <section id="profile">
-        <h2><i class="fas fa-user-tie"></i> Executive Profile</h2>
-        <p>
-            Dynamic <strong>Project Manager</strong> and Biomedical Engineer with extensive experience in managing technical teams and medical maintenance operations. 
-            Proven track record in <strong>enhancing operational efficiency</strong> and implementing <strong>AI-based predictive maintenance</strong> models. 
-            Deep knowledge of <strong>JCI and CBAHI accreditation standards</strong>. Currently pursuing <strong>PMP certification</strong> to further solidify managerial expertise.
-        </p>
-    </section>
-
-    <section id="experience">
-        <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
-
-        <div class="job">
-            <h3>Project Manager</h3>
-            <span class="job-meta">
-                <a href="https://fgc.sa/" target="_blank">First Gulf Company (FGC)</a> - Tabuk Health Cluster | Oct 2022 - Present
-            </span>
-            <ul>
-                <li><strong>Leadership:</strong> Managing a technical team of <strong>3 Engineers and 14 Technicians</strong> at the General Administration of Medical Maintenance.</li>
-                <li><strong>Operations:</strong> Overseeing medical asset maintenance, ensuring workflow efficiency and minimizing downtime.</li>
-                <li><strong>Strategy:</strong> Implementing strategies to raise maintenance standards and ensure compliance with health cluster KPIs.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <h3>Mobile Teams Project Manager</h3>
-            <span class="job-meta">
-                <a href="https://sraco.com.sa/" target="_blank">SRACO Company</a> - Tabuk Region | Aug 2018 - Sept 2022
-            </span>
-            <ul>
-                <li>Managed mobile maintenance teams across the entire Tabuk region.</li>
-                <li>Supervised routine and urgent maintenance tasks ensuring rapid response times.</li>
-                <li>Coordinated directly with health facilities to guarantee optimal equipment availability.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <h3>Senior Biomedical & Clinical Engineer</h3>
-            <span class="job-meta">
-                <a href="https://www.assih.com/" target="_blank">As-salam Hospital (JCI Accredited)</a> | Sept 2017 - July 2018
-            </span>
-            <ul>
-                <li>Led engineering teams, replacing the Supervisor Engineer during absence.</li>
-                <li>Resolved complex technical complaints and directed corrective actions.</li>
-                <li>Evaluated new equipment purchases and managed spare parts inventory.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <h3>Biomedical & Clinical Engineer</h3>
-            <span class="job-meta">
-                <a href="https://www.elarabyhospital.com/" target="_blank">Elaraby Hospital (JCI Accredited)</a> | March 2016 - Sept 2017
-            </span>
-            <ul>
-                <li>Provided comprehensive technical support and documentation for JCI compliance.</li>
-                <li>Developed preventive maintenance schedules and trained technical staff.</li>
-                <li>Participated in acquisition planning, renovation projects, and equipment upgrades.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <h3>Maintenance Engineer</h3>
-            <span class="job-meta">
-                <a href="https://wahamed.com/" target="_blank">Al Waha Medical Service Company</a> | Sept 2013 - March 2016
-            </span>
-            <ul>
-                <li>Carried out installation, calibration, and repair of medical instrumentation.</li>
-                <li>Performed on-site troubleshooting and customer training.</li>
-            </ul>
-        </div>
-    </section>
-    
-    <section id="projects">
-        <h2><i class="fas fa-lightbulb"></i> Key Projects & Innovations</h2>
-        
-        <div class="project">
-            <h3>AI-Driven Predictive Maintenance System <span class="badge">Current</span></h3>
-            <p>Leading an initiative to utilize <strong>Artificial Intelligence</strong> for predicting medical equipment faults. The goal is to shift from reactive to predictive maintenance, reducing unexpected downtime and optimizing asset lifespan.</p>
-        </div>
-
-        <div class="project">
-            <h3>Hospital Devices Information System (HDIS)</h3>
-            <p>Designed and developed a custom <strong>Desktop Application (C#, SQL Server)</strong> to digitize the inventory management process. Features included maintenance tracking, technical validation reports, and spare parts stock management.</p>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2><i class="fas fa-tools"></i> Skills & Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-item">Project Management (PMP)</div>
-            <div class="skill-item">Team Leadership</div>
-            <div class="skill-item">Accreditation (JCI & CBAHI)</div>
-            <div class="skill-item">AI in Healthcare</div>
-            <div class="skill-item">Software Dev (C#, SQL)</div>
-            <div class="skill-item">Predictive Maintenance</div>
-            <div class="skill-item">Medical Asset Management</div>
-            <div class="skill-item">Budgeting & Planning</div>
-        </div>
-    </section>
-
-    <section id="certificates">
-        <h2><i class="fas fa-certificate"></i> Certifications & Documents</h2>
-        <p style="font-size:0.9rem; color:#666; margin-bottom:15px;">A collection of my professional certificates and training documents.</p>
-        
-        <div class="gallery-grid">
-            <div class="cert-card">
-                <a href="images/1.jpg" target="_blank">
-                    <img src="images/1.jpg" alt="Document 1" loading="lazy">
-                </a>
-                <div class="cert-caption">التميز فى الجودة</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/2.jpg" target="_blank">
-                    <img src="images/2.jpg" alt="Document 2" loading="lazy">
-                </a>
-                <div class="cert-caption">خبرة سراكو</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/3.jpg" target="_blank">
-                    <img src="images/3.jpg" alt="Document 3" loading="lazy">
-                </a>
-                <div class="cert-caption">نقل وتركيب اجهزة</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/4.jpg" target="_blank">
-                    <img src="images/4.jpg" alt="Document 4" loading="lazy">
-                </a>
-                <div class="cert-caption">شهادة تدريب اجهزة الكلي</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/5.jpg" target="_blank">
-                    <img src="images/5.jpg" alt="Document 5" loading="lazy">
-                </a>
-                <div class="cert-caption">التدريب علي اجهزة المعايرة </div>
-            </div>
-            <div class="cert-card">
-                <a href="images/6.jpg" target="_blank">
-                    <img src="images/6.jpg" alt="Document 6" loading="lazy">
-                </a>
-                <div class="cert-caption">تدريب شركة سيمينس</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/7.jpg" target="_blank">
-                    <img src="images/7.jpg" alt="Document 7" loading="lazy">
-                </a>
-                <div class="cert-caption">النفايات الطبية</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/8.jpg" target="_blank">
-                    <img src="images/8.jpg" alt="Document 8" loading="lazy">
-                </a>
-                <div class="cert-caption">تدريب شركة جي اي</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/9.jpg" target="_blank">
-                    <img src="images/9.jpg" alt="Document 9" loading="lazy">
-                </a>
-                <div class="cert-caption">الغازات الطبية</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/10.jpg" target="_blank">
-                    <img src="images/10.jpg" alt="Document 10" loading="lazy">
-                </a>
-                <div class="cert-caption">خبرة شركة الواحة</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/11.jpg" target="_blank">
-                    <img src="images/11.jpg" alt="Document 11" loading="lazy">
-                </a>
-                <div class="cert-caption">خبرة مستشفي العربي</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/12.jpg" target="_blank">
-                    <img src="images/12.jpg" alt="Document 12" loading="lazy">
-                </a>
-                <div class="cert-caption">خبرة مستشفي السلام الدولي</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/13.jpg" target="_blank">
-                    <img src="images/13.jpg" alt="Document 13" loading="lazy">
-                </a>
-                <div class="cert-caption">الهيئة الهندسية</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/14.jpg" target="_blank">
-                    <img src="images/14.jpg" alt="Document 14" loading="lazy">
-                </a>
-                <div class="cert-caption"> المساهمه فى برنامج الصيانة الطبية </div>
-            </div>
-            <div class="cert-card">
-                <a href="images/15.jpg" target="_blank">
-                    <img src="images/15.jpg" alt="Document 15" loading="lazy">
-                </a>
-                <div class="cert-caption">تدريب اجهزة مختبرات </div>
-            </div>
-            <div class="cert-card">
-                <a href="images/16.jpg" target="_blank">
-                    <img src="images/16.jpg" alt="Document 16" loading="lazy">
-                </a>
-                 <div class="cert-caption">  الامن السبراني</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/17.jpg" target="_blank">
-                    <img src="images/17.jpg" alt="Document 17" loading="lazy">
-                </a>
-                 <div class="cert-caption">شكر اعتماد سباهي</div>
-            </div>
-            <div class="cert-card">
-                <a href="images/18.jpg" target="_blank">
-                    <img src="images/18.jpg" alt="Document 18" loading="lazy">
-                </a>
-                 <div class="cert-caption">شكر تجمع تبوك</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-        <div class="job">
-            <h3>B.Sc. in Systems & Biomedical Engineering</h3>
-            <span class="job-meta">Cairo University | 2013</span>
-            <p><strong>Graduation Project:</strong> Robot Arm (Grade: Excellent)</p>
-        </div>
-    </section>
-</div>
-
-<footer>
-    <p>&copy; 2025 Ahmed Mohamed Adel. All Rights Reserved.</p>
-</footer>
 
 </body>
 </html>

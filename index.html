@@ -41,16 +41,16 @@ a{color:inherit}
 /* ===== KPI strip ===== */
 .kpis{max-width:1120px;margin:-60px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative;z-index:2}
 .kpi{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 10px 30px rgba(11,37,69,.10);border-top:4px solid var(--teal)}
-.kpi b{display:block;font-size:2rem;font-weight:800;color:var(--navy);line-height:1.1}
+.kpi b{display:block;font-size:2rem;font-weight:800;color:var(--head);line-height:1.1}
 .kpi span{color:var(--muted);font-size:.88rem;font-weight:500}
 
 /* ===== Layout ===== */
 .wrap{max-width:1120px;margin:28px auto;padding:0 24px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
 .card{background:var(--card);border-radius:14px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.05);margin-bottom:24px}
-h2{margin:0 0 18px;font-size:1.05rem;text-transform:uppercase;letter-spacing:.08em;color:var(--navy);display:flex;align-items:center;gap:10px}
+h2{margin:0 0 18px;font-size:1.05rem;text-transform:uppercase;letter-spacing:.08em;color:var(--head);display:flex;align-items:center;gap:10px}
 h2 i{color:var(--teal)}
 .lead{margin:0;font-size:1.02rem}
-.lead strong{color:var(--navy)}
+.lead strong{color:var(--head)}
 
 /* Timeline */
 .tl{position:relative;padding-left:26px}
@@ -60,21 +60,21 @@ h2 i{color:var(--teal)}
 .job::before{content:"";position:absolute;left:-26px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--teal)}
 .job.now::before{background:var(--teal);box-shadow:0 0 0 5px var(--teal-soft)}
 .job-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.job h3{margin:0;font-size:1.12rem;color:var(--navy)}
+.job h3{margin:0;font-size:1.12rem;color:var(--head)}
 .date{font-size:.85rem;font-weight:600;color:var(--teal);white-space:nowrap}
 .org{margin:2px 0 10px;color:var(--muted);font-size:.93rem}
 .org a{color:var(--ink);font-weight:600;text-decoration:none}
 .org a:hover{color:var(--teal)}
-.promo{display:inline-block;font-size:.72rem;font-weight:700;background:var(--teal-soft);color:#115e59;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.promo{display:inline-block;font-size:.72rem;font-weight:700;background:var(--teal-soft);color:var(--chip-ink);padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
 .job ul{margin:0;padding-left:18px}
 .job li{margin-bottom:6px}
-.job li strong{color:var(--navy)}
+.job li strong{color:var(--head)}
 .sub-role{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
 
 /* Projects */
 .proj{border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px}
 .proj:last-child{margin-bottom:0}
-.proj h3{margin:0 0 6px;font-size:1.02rem;color:var(--navy);display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.proj h3{margin:0 0 6px;font-size:1.02rem;color:var(--head);display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .tag{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em}
 .tag-dev{background:#fef3c7;color:#92400e}
 .tag-data{background:#e0e7ff;color:#3730a3}
@@ -87,7 +87,7 @@ h2 i{color:var(--teal)}
 .side h2{font-size:.95rem}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips span{background:var(--bg);border:1px solid var(--line);padding:5px 11px;border-radius:999px;font-size:.84rem;font-weight:500}
-.chips.accent span{background:var(--teal-soft);border-color:#99f6e4;color:#115e59;font-weight:600}
+.chips.accent span{background:var(--teal-soft);border-color:#99f6e4;color:var(--chip-ink);font-weight:600}
 .list{list-style:none;margin:0;padding:0}
 .list li{display:flex;gap:10px;margin-bottom:12px;font-size:.92rem}
 .list li i{color:var(--teal);margin-top:4px;width:16px;text-align:center}
@@ -104,7 +104,7 @@ h2 i{color:var(--teal)}
 .cert{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;cursor:pointer;transition:.2s;text-align:left;padding:0;font:inherit;color:inherit}
 .cert:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(11,37,69,.12)}
 .cert img{width:100%;height:150px;object-fit:cover;object-position:top;display:block;background:var(--bg)}
-.cert div{padding:10px 12px;font-size:.85rem;font-weight:600;color:var(--navy)}
+.cert div{padding:10px 12px;font-size:.85rem;font-weight:600;color:var(--head)}
 .cert small{display:block;font-weight:500;color:var(--muted);font-size:.75rem}
 .lightbox{position:fixed;inset:0;background:rgba(2,6,23,.85);display:none;align-items:center;justify-content:center;z-index:50;padding:24px}
 .lightbox.open{display:flex}
@@ -147,12 +147,93 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px}
   .job-head{flex-direction:row!important}
   footer{padding:8px}
 }
+
+/* ===== v3: theme tokens ===== */
+:root{--head:#0b2545;--chip-ink:#115e59}
+[data-theme=dark]{--bg:#0a1324;--card:#111c33;--ink:#dbe4f0;--muted:#93a4bd;--line:#22314f;--head:#e8eef7;--teal-soft:#123f3c;--chip-ink:#99f6e4}
+body{transition:background .3s,color .3s}
+.cert{background:var(--card)}
+/* hero tools */
+.hero-tools{position:absolute;top:18px;right:24px;display:flex;gap:8px;z-index:3}
+.hero-tools .lang{position:static}
+.lang.theme-toggle{cursor:pointer;font:inherit;padding:6px 11px}
+.hero-inner>*{animation:up .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-inner>*:nth-child(2){animation-delay:.08s}.hero-inner>*:nth-child(3){animation-delay:.16s}
+.hero-inner>*:nth-child(4){animation-delay:.24s}.hero-inner>*:nth-child(5){animation-delay:.32s}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+.js .cert.reveal.in:hover{transform:translateY(-4px)}
+.kpi{transition:transform .25s,box-shadow .25s}
+.js .kpi.reveal.in:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,37,69,.16)}
+/* progress + nav */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),#5eead4);z-index:60}
+.topnav{position:fixed;top:0;left:0;right:0;z-index:55;background:var(--card);background:color-mix(in srgb,var(--card) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transform:translateY(-105%);transition:transform .3s ease}
+.topnav.show{transform:none}
+.nav-in{max-width:1120px;margin:auto;padding:10px 24px;display:flex;align-items:center;gap:16px}
+.brand{font-weight:800;color:var(--head);text-decoration:none;white-space:nowrap}
+.nav-links{display:flex;gap:4px;margin-inline-start:auto}
+.nav-links a{padding:6px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:600;font-size:.9rem;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--chip-ink);background:var(--teal-soft)}
+.nav-act{display:flex;gap:8px;align-items:center}
+.icon-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--head);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;font:inherit;font-weight:700}
+.icon-btn:hover{border-color:var(--teal);color:var(--teal)}
+.btn-sm{padding:7px 12px;font-size:.88rem}
+@media(max-width:760px){.nav-links{display:none}.nav-act{margin-inline-start:auto}}
+/* rich projects */
+.proj-feature{border-color:var(--teal);background:linear-gradient(180deg,var(--teal-soft),var(--card) 160px)}
+.proj-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.proj-icon{flex:none;width:46px;height:46px;border-radius:12px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.proj-sub{color:var(--muted)}
+.label{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 8px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.flow span{background:var(--card);border:1px solid var(--line);color:var(--head);padding:5px 10px;border-radius:8px;font-size:.8rem;font-weight:600}
+.flow .arr{color:var(--teal);font-size:.75rem}
+.mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.mod{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--card);transition:.2s}
+.mod:hover{border-color:var(--teal);transform:translateY(-2px)}
+.mod i{color:var(--teal);margin-bottom:4px}
+.mod b{display:block;font-size:.85rem;color:var(--head)}
+.mod small{color:var(--muted);font-size:.75rem;line-height:1.35;display:block}
+.stages{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.stage{position:relative;padding:10px;border-radius:10px;border:1px dashed var(--line);font-size:.82rem;color:var(--muted);line-height:1.35}
+.stage b{display:block;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.stage.cur{border:1px solid var(--teal);background:var(--teal-soft);color:var(--chip-ink);font-weight:600}
+.stage.cur::after{content:"";position:absolute;top:10px;right:10px;width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(13,148,136,.6)}70%{box-shadow:0 0 0 8px rgba(13,148,136,0)}100%{box-shadow:0 0 0 0 rgba(13,148,136,0)}}
+.goals{display:flex;flex-wrap:wrap;gap:8px}
+.goals span{font-size:.8rem;display:inline-flex;gap:6px;align-items:center;color:var(--ink)}
+.goals i{color:var(--teal)}
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.feat div{text-align:center;border:1px solid var(--line);border-radius:10px;padding:10px 6px;font-size:.78rem;font-weight:600;color:var(--head)}
+.feat i{display:block;color:var(--teal);font-size:1.1rem;margin-bottom:4px}
+@media(max-width:620px){.stages,.feat{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}}
+@media print{
+  :root,[data-theme=dark]{--bg:#fff;--card:#fff;--ink:#1e293b;--muted:#64748b;--line:#e2e8f0;--head:#0b2545;--teal-soft:#ccfbf1;--chip-ink:#115e59}
+  .topnav,.progress,.hero-tools,.mods,.goals,.feat{display:none!important}
+  .js .reveal{opacity:1!important;transform:none!important}
+  .proj-feature{background:#fff}
+}
 </style>
+<script>(function(){var t=null;try{t=localStorage.getItem('cv-theme')}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add('js')})();</script>
 </head>
 <body>
-
-<header class="hero">
-  <a href="ar.html" class="lang" lang="ar">العربية <i class="fas fa-globe"></i></a>
+<div class="progress" id="progress"></div>
+<nav class="topnav" id="topnav" aria-label="Sections">
+  <div class="nav-in">
+    <a href="#top" class="brand">Ahmed Adel</a>
+    <div class="nav-links"><a href="#profile">Summary</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a></div>
+    <div class="nav-act">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <a class="icon-btn" href="ar.html" lang="ar" title="العربية">ع</a>
+      <a class="btn btn-primary btn-sm" href="Ahmed_Adel_CV.pdf" download><i class="fas fa-download"></i> CV</a>
+    </div>
+  </div>
+</nav>
+<header class="hero" id="top">
+  <div class="hero-tools"><button class="lang theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button><a href="ar.html" class="lang" lang="ar">العربية <i class="fas fa-globe"></i></a></div>
   <div class="hero-inner">
     <h1>Ahmed Mohamed Adel</h1>
     <p class="role">Area Project Manager &nbsp;|&nbsp; Biomedical &amp; Clinical Engineer</p>
@@ -164,7 +245,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px}
       <a href="https://www.linkedin.com/in/ahmad-adel-b24404bb" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> linkedin.com/in/ahmad-adel-b24404bb</a>
     </div>
     <div class="actions">
-      <button class="btn btn-primary" onclick="window.print()"><i class="fas fa-file-pdf"></i> Download CV (PDF)</button>
+      <a class="btn btn-primary" href="Ahmed_Adel_CV.pdf" download><i class="fas fa-file-pdf"></i> Download CV (PDF)</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/ahmad-adel-b24404bb" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
       <a class="btn btn-ghost" href="#certificates"><i class="fas fa-award"></i> Certificates</a>
     </div>
@@ -278,23 +359,69 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px}
     <section class="card" id="projects">
       <h2><i class="fas fa-lightbulb"></i> Key Projects &amp; Innovation</h2>
 
-      <div class="proj">
-        <h3>Tabuk Medical CMMS <span class="tag tag-dev">In development</span></h3>
-        <p>Designing and building a web-based Computerized Maintenance Management System tailored to the cluster's performance-based maintenance contract: asset registry, sites &amp; departments, tickets and work orders, PPM &amp; calibration, spare parts, KPI dashboards, and the monthly contract extract with automated penalty/deduction calculation.</p>
+      <article class="proj proj-feature">
+        <div class="proj-top">
+          <div>
+            <h3>Tabuk Medical CMMS <span class="tag tag-dev">In development</span></h3>
+            <p class="proj-sub">A web-based maintenance platform designed around the cluster's performance-based maintenance contract — from the asset register all the way to the monthly contract extract.</p>
+          </div>
+          <div class="proj-icon"><i class="fas fa-hospital"></i></div>
+        </div>
+        <div class="label">End-to-end workflow</div>
+        <div class="flow">
+          <span>Asset Registry</span><i class="fas fa-arrow-right arr"></i><span>Ticket</span><i class="fas fa-arrow-right arr"></i><span>Work Order</span><i class="fas fa-arrow-right arr"></i><span>PPM &amp; Calibration</span><i class="fas fa-arrow-right arr"></i><span>KPIs</span><i class="fas fa-arrow-right arr"></i><span>Monthly Extract</span>
+        </div>
+        <div class="label">Planned modules</div>
+        <div class="mods">
+          <div class="mod"><i class="fas fa-stethoscope"></i><b>Medical Devices</b><small>Full asset register with technical data</small></div>
+          <div class="mod"><i class="fas fa-sitemap"></i><b>Sites &amp; Departments</b><small>Hospitals, PHCs, departments and rooms</small></div>
+          <div class="mod"><i class="fas fa-users-gear"></i><b>Users &amp; Roles</b><small>Engineers, technicians, dispatchers</small></div>
+          <div class="mod"><i class="fas fa-screwdriver-wrench"></i><b>Tickets &amp; Work Orders</b><small>Corrective maintenance lifecycle</small></div>
+          <div class="mod"><i class="fas fa-calendar-check"></i><b>PPM &amp; Calibration</b><small>Scheduled and auto-assigned orders</small></div>
+          <div class="mod"><i class="fas fa-boxes-stacked"></i><b>Spare Parts</b><small>Requests, stock and consumption</small></div>
+          <div class="mod"><i class="fas fa-chart-line"></i><b>KPIs &amp; Reports</b><small>Uptime, response and repair times</small></div>
+          <div class="mod"><i class="fas fa-file-invoice-dollar"></i><b>Monthly Extract</b><small>Automated penalties &amp; deductions</small></div>
+        </div>
+        <div class="label">Stack</div>
         <div class="stack"><span>Next.js</span><span>Supabase</span><span>KPI Dashboards</span><span>Contract Management</span></div>
-      </div>
+      </article>
 
-      <div class="proj">
-        <h3>AI-Driven Predictive Maintenance <span class="tag tag-data">Data analysis phase</span></h3>
-        <p>Collecting and analyzing historical work-order data to identify failure patterns, as the foundation for a model that predicts equipment faults — shifting from reactive to predictive maintenance and extending asset lifespan.</p>
-        <div class="stack"><span>Data Analysis</span><span>Machine Learning</span><span>Reliability</span></div>
-      </div>
+      <article class="proj">
+        <div class="proj-top">
+          <div>
+            <h3>AI-Driven Predictive Maintenance <span class="tag tag-data">Data analysis phase</span></h3>
+            <p class="proj-sub">Using historical work-order data to predict equipment faults before they happen — shifting maintenance from reactive to predictive.</p>
+          </div>
+          <div class="proj-icon"><i class="fas fa-brain"></i></div>
+        </div>
+        <div class="label">Roadmap</div>
+        <div class="stages">
+          <div class="stage cur"><b>Stage 1 · Now</b>Data collection &amp; analysis</div>
+          <div class="stage"><b>Stage 2</b>Failure-pattern features</div>
+          <div class="stage"><b>Stage 3</b>Model training &amp; validation</div>
+          <div class="stage"><b>Stage 4</b>Pilot on critical devices</div>
+        </div>
+        <div class="label">Target outcomes</div>
+        <div class="goals"><span><i class="fas fa-arrow-trend-down"></i> Less unplanned downtime</span><span><i class="fas fa-sliders"></i> Optimized PPM intervals</span><span><i class="fas fa-hourglass-half"></i> Longer asset lifespan</span></div>
+      </article>
 
-      <div class="proj">
-        <h3>Hospital Devices Information System (HDIS) <span class="tag tag-done">Delivered</span></h3>
-        <p>Designed and developed a desktop application to digitize medical equipment inventory, with maintenance tracking, technical validation reports and spare-parts stock management.</p>
+      <article class="proj">
+        <div class="proj-top">
+          <div>
+            <h3>Hospital Devices Information System (HDIS) <span class="tag tag-done">Delivered</span></h3>
+            <p class="proj-sub">A desktop application I designed and built to digitize medical equipment management in the hospital.</p>
+          </div>
+          <div class="proj-icon"><i class="fas fa-desktop"></i></div>
+        </div>
+        <div class="label">Features</div>
+        <div class="feat">
+          <div><i class="fas fa-clipboard-list"></i>Equipment inventory</div>
+          <div><i class="fas fa-wrench"></i>Maintenance tracking</div>
+          <div><i class="fas fa-file-circle-check"></i>Technical validation reports</div>
+          <div><i class="fas fa-boxes-stacked"></i>Spare-parts stock</div>
+        </div>
         <div class="stack"><span>C#</span><span>SQL Server</span></div>
-      </div>
+      </article>
     </section>
   </main>
 
@@ -382,6 +509,37 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px}
   }));
   lb.addEventListener('click', e => { if (e.target !== lbImg) lb.classList.remove('open'); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+</script>
+<script>
+(function(){
+  var root=document.documentElement;
+  function icon(){var d=root.getAttribute('data-theme')==='dark';document.querySelectorAll('.theme-toggle i').forEach(function(i){i.className='fas '+(d?'fa-sun':'fa-moon')})}
+  icon();
+  document.querySelectorAll('.theme-toggle').forEach(function(b){b.addEventListener('click',function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',t);try{localStorage.setItem('cv-theme',t)}catch(e){}icon()})});
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=document.querySelectorAll('main .card, .side .card, .kpi, .job, .proj, .cert, #certificates .card');
+  if('IntersectionObserver' in window && !reduce){
+    els.forEach(function(e){e.classList.add('reveal')});
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+    document.querySelectorAll('.kpi b').forEach(function(b){
+      var m=b.textContent.trim().match(/^(\D*)([\d,]+)(\D*)$/);if(!m)return;
+      var pre=m[1],suf=m[3],to=parseInt(m[2].replace(/,/g,''),10);
+      b.textContent=pre+'0'+suf;
+      var o=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;o.disconnect();var t0=performance.now(),d=1500;
+        (function step(t){var k=Math.min(1,(t-t0)/d),v=Math.round(to*(1-Math.pow(1-k,3)));b.textContent=pre+v.toLocaleString('en-US')+suf;if(k<1)requestAnimationFrame(step)})(t0)});
+      o.observe(b);
+    });
+  }
+  var nav=document.getElementById('topnav'),bar=document.getElementById('progress'),hero=document.querySelector('.hero');
+  function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?h.scrollTop/max*100:0)+'%';nav.classList.toggle('show',h.scrollTop>hero.offsetHeight-80)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var links=[].slice.call(document.querySelectorAll('.nav-links a'));
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+en.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+    ['profile','experience','projects','certificates'].forEach(function(id){var e=document.getElementById(id);if(e)so.observe(e)});
+  }
+})();
 </script>
 </body>
 </html>
